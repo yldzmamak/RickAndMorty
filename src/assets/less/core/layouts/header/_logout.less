@@ -1,0 +1,45 @@
+.ant-row {
+  &.logout {
+    border-radius: 9px;
+    height: 38px;
+    width: 38px;
+
+    .btn-logout {
+      background: @green-200;
+    }
+
+    .btn-logout {
+      border: none;
+      border-radius: 9px;
+      height: 38px;
+      width: 38px;
+      .flex();
+      .justifyCenter();
+      .alignCenter();
+
+      &:hover {
+        >div {
+          div {
+            svg * {
+              fill: @blue-700;
+              transition: .3s;
+            }
+          }
+        }
+      }
+
+      >div {
+        div {
+          .flex();
+          .justifyCenter();
+          .alignCenter();
+
+          svg {
+            height: 13px;
+            width: 12px;
+          }
+        }
+      }
+    }
+  }
+}

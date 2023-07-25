@@ -1,0 +1,245 @@
+.ant-btn-primary {
+  /* System buttons */
+  &.btn-cancel {
+    background: @btn-cancel;
+    border-color: @btn-cancel;
+
+    &:hover {
+      background: @btn-cancel;
+      border-color: @btn-cancel;
+    }
+
+    &:focus {
+      background: @btn-cancel;
+      border-color: @btn-cancel;
+      color: @white;
+    }
+  }
+
+  &.btn-cancel-outline {
+    background: @white;
+    border-color: @gray-light;
+    color: @btn-cancel;
+
+    &:hover {
+      background: @gray-light;
+      border-color: @gray-light;
+      color: @white;
+    }
+
+    &:focus {
+      background: @gray-light;
+      border-color: @gray-light;
+      color: @white;
+    }
+  }
+
+  &.btn-danger {
+    background: @btn-danger;
+    border-color: @btn-danger;
+
+    &:hover {
+      background: @btn-danger;
+      border-color: @btn-danger;
+    }
+
+    &:focus {
+      background: @btn-danger;
+      border-color: @btn-danger;
+      color: @white;
+    }
+  }
+
+  &.btn-outline {
+    background: @white;
+  
+    &.btn-mobile-xs-logout {
+      color: @rickandmorty;
+      // margin-bottom: 0.5rem;
+      margin-top: 2rem;
+      .flex();
+      .justifyCenter();
+      .alignCenter();
+    }
+
+    &.btn-mobile-xs-close {
+      border-radius: 0;
+      bottom: 0;
+      height: 3rem;
+      left: 0;
+      position: fixed;
+      right: 0;
+    }
+  }
+
+  &.btn-dark-blue {
+    background: @btn-dark-blue;
+    border-color: @btn-dark-blue;
+    color: @white;
+    .flex();
+    .alignCenter();
+    .justifyCenter();
+    //height: 35px;
+
+    &:hover {
+      background: @btn-dark-blue;
+      border-color: @btn-dark-blue;
+      color: @white;
+    }
+
+    &:focus {
+      background: @btn-dark-blue;
+      border-color: @btn-dark-blue;
+      color: @white;
+    }
+  }
+
+  &.btn-red {
+    background: @btn-red;
+    border-color: @btn-red;
+    color: @white;
+
+    &:hover {
+      background: @btn-red;
+      border-color: @btn-red;
+      color: @white;
+    }
+
+    &:focus {
+      background: @btn-red;
+      border-color: @btn-red;
+      color: @white;
+    }
+  }
+
+  &.btn-red-outline {
+    background: @white;
+    border-color: @btn-red;
+    color: @btn-red;
+
+    &:hover {
+      background: @btn-red;
+      border-color: @btn-red;
+      color: @white;
+    }
+
+    &:focus {
+      background: @btn-red;
+      border-color: @btn-red;
+      color: @white;
+    }
+  }
+
+
+  &.btn-wallet-white {
+    .flex();
+    .alignCenter();
+
+    background: @btn-white;
+    border: 1px solid rgb(0 0 0 / 6%);
+    border-color: @btn-white;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgb(0 0 0 / 6%);
+    color: @blue-700;
+    height: 45px;
+
+    >div {
+      .mr-16();
+    }
+
+    &:hover {
+      background: @white;
+      border-color: rgb(0 0 0 / 6%);
+      color: @blue-700;
+    }
+
+    &:focus {
+      background: @btn-white;
+      border-color: @btn-white;
+      color: @blue-700;
+    }
+  }
+
+  &.btn-action-detail {
+    background: @white;
+    border-color: @btn-outline;
+    color: @btn-outline;
+    height: 27px;
+    padding: 2.8px 15px;
+    .font-weight-5();
+    .fs-12();
+
+    &:hover {
+      background: @btn-outline;
+      border-color: @btn-outline;
+      color: @white;
+    }
+
+    &:focus {
+      background: @btn-outline;
+      border-color: @btn-outline;
+      color: @white;
+    }
+  }
+
+  &.btn-action-danger {
+    background: @btn-danger;
+    border-color: @btn-danger;
+    height: 27px;
+    padding: 2.8px 15px;
+    .font-weight-5();
+    .fs-12();
+
+    &:hover {
+      background: @btn-danger;
+      border-color: @btn-danger;
+    }
+
+    &:focus {
+      background: @btn-danger;
+      border-color: @btn-danger;
+      color: @white;
+    }
+  }
+
+  &.btn-table-action {
+    background: none;
+    border: none;
+    border-radius: 0;
+    height: auto;
+    padding: 0;
+
+    &:hover {
+      background: none;
+      border-color: none;
+    }
+
+    &:focus {
+      background: none;
+      border-color: none;
+    }
+
+    &.disabled {
+      .detail,
+      .payable,
+      .closeloan,
+      .paynow,
+      .payinstallment {
+        opacity: .5;
+      }
+    }
+
+    .svgFlexCenterWithWidthHeightInnerDiv(18px, 18px);
+
+    .payable,
+    .closeloan,
+    .paynow,
+    .payinstallment {
+      .onChangeInnerDivInSvgColor(@rickandmorty);
+    }
+  }
+}
+
+.ant-btn-primary[disabled] {
+  color: @gray-900  !important;
+}

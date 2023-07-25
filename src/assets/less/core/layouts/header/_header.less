@@ -1,0 +1,78 @@
+.header {
+  transition: all 0.5s ease;
+
+  &.active {
+    backdrop-filter: blur(2px);
+    background: fade(@white, 75%);
+    box-shadow: 0 0 15px 0 rgb(34 41 47 / 5%);
+  }
+
+  .header-row {
+    margin: 0 auto 37px;
+    max-width: 1172px;
+    padding: 0 23px;
+    width: 100% !important;
+
+    .header-left {
+      flex-grow: 0 !important;
+      flex-shrink: 0 !important;
+    }
+
+    .header-right {
+      margin-left: auto;
+      width: 100%;
+
+      profile {
+        flex-shrink: 0 !important;
+        margin-right: 6px;
+
+        .profile-username {
+          max-width: 230px;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .header-left {
+      .flex();
+
+      .header-logo {
+        width: 160px;
+      }
+    }
+  }
+
+  .header-mobile {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header-left {
+    flex: auto !important;
+    flex-shrink: 0 !important;
+    max-width: auto !important;
+    position: relative;
+    width: auto !important;
+  }
+
+  .header-right {
+    .flex();
+    .justifyEnd();
+    .alignCenter();
+
+    .language-selection,
+    notifications,
+    profile {
+      cursor: pointer;
+      height: 52px;
+    }
+
+    .header-right-inner {
+      .flex();
+      .alignCenter();
+      .justifyEnd();
+    }
+  }
+}

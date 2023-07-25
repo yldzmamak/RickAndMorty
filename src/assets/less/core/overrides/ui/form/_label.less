@@ -1,0 +1,19 @@
+.ant-form {
+  .ant-form-item {
+    .ant-form-item-label {
+      >label {
+        font-weight: 400;
+        margin-left: 16px;
+
+        &.ant-form-item-required {
+          &:not(.ant-form-item-required-mark-optional) {
+            &::before {
+              position: absolute;
+              right: -13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

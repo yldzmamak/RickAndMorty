@@ -1,0 +1,91 @@
+.language-trigger-icon {
+  >div {
+    svg * {
+      fill: @blue-700;
+    }
+  }
+}
+
+.language-selection {
+  // color: @blue-700;
+  margin-right: 10px;
+  user-select: none;
+
+  .language-selector {
+    .flex();
+
+    padding: 0 12px;
+    .h-100();
+
+    .language-icon {
+      .h-100();
+      .flex();
+      .alignCenter();
+
+      div {
+        .flex();
+      }
+    }
+
+    .language-title,
+    .language-icon,
+    .language-trigger-icon {
+      .flex();
+      .alignCenter();
+    }
+
+
+    .language-title {
+      .mr-8();
+      .ml-8();
+      .h-100();
+      .font-weight-5();
+    }
+
+    &.ant-dropdown-open {
+      .language-trigger-icon {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .language-trigger-icon {
+      .ml-auto();
+      .h-100();
+
+      svg {
+        transition: 0.3s;
+      }
+
+      >div {
+        svg {
+          fill: @blue-700;
+        }
+      }
+    }
+  }
+}
+
+.ant-dropdown-menu {
+  border-radius: 5px;
+  box-shadow: @default-boxShadow;
+
+  .language-flag {
+    min-width: 20px;
+    padding-top: 3px;
+
+    >div {
+      .flex();
+      .alignCenter();
+    }
+  }
+
+  .ant-dropdown-menu-item {
+    .ant-dropdown-menu-title-content {
+      .font-weight-5();
+
+      color: @blue-700;
+    }
+  }
+}

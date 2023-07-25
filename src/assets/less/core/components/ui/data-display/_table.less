@@ -1,0 +1,91 @@
+.ant-table {
+  .approve {
+    background: @green-200;
+  }
+
+  .awaiting-approval {
+    background: @yellow-500;
+  }
+
+  .oncoming {
+    background: @gray-50;
+  }
+
+  .rejected {
+    background: @pink-200;
+  }
+}
+
+// Table Header
+.table-header {
+  padding: 12px 0 24px;
+  .flex();
+  .justifyBetween();
+  .alignCenter();
+
+  .table-header-title {
+    .ant-typography {
+      color: @rickandmorty
+    }
+  }
+
+  .table-header-left {
+    .ant-radio-group {
+      .w-100();
+
+      .ant-radio-button-wrapper {
+        border: 1px solid rgb(0 0 0 / 5%);
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgb(0 0 0 / 6%);
+        height: 45px;
+        line-height: 40px;
+        padding: 0 25px;
+        .mr-16();
+        .text-center();
+
+        &:not(&:first-child) {
+          &::before {
+            background-color: transparent;
+          }
+        }
+      }
+
+      .ant-radio-button-wrapper-checked {
+        &:not(.ant-radio-button-wrapper-disabled) {
+          color: @white;
+
+          &::before {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .table-header-right {
+    .flex();
+    .justifyEnd();
+  }
+}
+
+// Table Column Actions
+.table-action-button {
+  cursor: pointer;
+  .svgFlexCenterWithWidthHeightInnerDiv(18px, 18px);
+
+  &.payable,
+  &.closeloan,
+  &.paynow,
+  &.payinstallment {
+    .onChangeInnerDivInSvgColor(@rickandmorty);
+  }
+}
+
+@media (max-width: 992px) {
+  .table-header {
+
+    .table-header-right {
+      .justifyStart() !important;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.ant-input {
+  border-radius: 30px;
+  font-weight: 400;
+  padding-left: 16px;
+  .text-capitalize();
+
+  &::placeholder {
+    color: @gray-500;
+    .font-weight-4();
+    .fs-13();
+  }
+
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}
+
+.ant-input-affix-wrapper {
+  border-color: @gray-400;
+  padding-left: 16px;
+  border-radius: 30px;
+
+  .font-weight-4();
+
+  .ant-input {
+    &:hover {
+      border: none;
+    }
+  }
+
+  &::placeholder {
+    color: @gray-300;
+    font-weight: 400;
+  }
+
+  .ant-input-prefix {
+    >div {
+      div {
+        .flex();
+        .alignCenter();
+      }
+    }
+  }
+}
+
+.ant-input-affix-wrapper-status-error {
+  &:not(.ant-input-affix-wrapper-disabled, .ant-input-affix-wrapper-borderless) {
+    &.ant-input-affix-wrapper {
+      &:focus {
+        box-shadow: 0 0 0 3px rgb(255 54 54 / 20%);
+      }
+    }
+  }
+}

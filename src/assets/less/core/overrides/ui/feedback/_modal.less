@@ -1,0 +1,43 @@
+.ant-modal {
+  .ant-modal-content {
+    border-radius: 20px;
+
+    .ant-modal-close {
+      color: @white;
+
+      :hover {
+        color: @black;
+        transition: .3s;
+      }
+    }
+
+    .ant-modal-header {
+      border-radius: 20px 20px 0 0;
+      padding: 0;
+    }
+  }
+}
+
+.ant-modal {
+  &.modal-global {
+    &.modal-introduction {
+      padding: 0;
+
+      .ant-modal-content {
+        border-radius: 25px;
+
+        .ant-modal-body {
+          padding: 0;
+
+          .modal-global-children {
+            padding: 0;
+
+            img {
+              border-radius: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+.onChangeSvgColor (@color) {
+  >div {
+    div {
+      svg * {
+        fill: @color;
+      }
+    }
+  }
+}
+
+.onChangeInnerDivInSvgColor (@color) {
+  div {
+    svg * {
+      fill: @color;
+    }
+  }
+}
+
+.svgFlexCenter () {
+  >div {
+    div {
+      svg {
+        .flex();
+        .justifyCenter();
+        .alignCenter();
+      }
+    }
+  }
+}
+
+.svgFlexCenterInnerDiv () {
+  div {
+    svg {
+      .flex();
+      .justifyCenter();
+      .alignCenter();
+    }
+  }
+}
+
+.svgFlexCenterWithMargin (@margin) {
+  >div {
+    div {
+      svg {
+        .flex();
+        .justifyCenter();
+        .alignCenter();
+
+        margin: @margin;
+      }
+    }
+  }
+}
+
+.svgFlexCenterWithPadding (@padding) {
+  >div {
+    div {
+      svg {
+        .flex();
+        .justifyCenter();
+        .alignCenter();
+
+        padding: @padding;
+      }
+    }
+  }
+}
+
+.svgFlexCenterWithWidthHeight (@width, @height) {
+  >div {
+    div {
+      svg {
+        .flex();
+        .justifyCenter();
+        .alignCenter();
+
+        height: @height;
+        width: @width;
+      }
+    }
+  }
+}
+
+.svgFlexCenterWithWidthHeightInnerDiv (@width, @height) {
+  div {
+    svg {
+      .flex();
+      .justifyCenter();
+      .alignCenter();
+
+      height: @height;
+      width: @width;
+    }
+  }
+}
+
+.manipulatedSvgPath (@color) {
+  >div {
+    div {
+      .flex();
+      .justifyCenter();
+      .alignCenter();
+
+      svg {
+        path {
+          fill: @color;
+          transition: fill 0.3s !important;
+        }
+      }
+    }
+  }
+}

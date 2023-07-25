@@ -1,0 +1,89 @@
+.ant-modal {
+  &.global-error-modal {
+    .error-head {
+      color: @rickandmorty;
+    }
+
+    .ant-modal-confirm-btns {
+      .text-center();
+
+      .ant-btn {
+        background: @rickandmorty;
+        border-color: @rickandmorty;
+        .flex();
+        .justifyCenter();
+        .alignCenter();
+
+        &:hover {
+          background: @rickandmorty;
+          border-color: @rickandmorty;
+        }
+
+        &:focus {
+          background: @rickandmorty;
+          border-color: @rickandmorty;
+          color: @white;
+        }
+      }
+    }
+
+    .ant-modal-content {
+      .ant-modal-body {
+        // padding: 24px;
+        padding: 0 24px 24px;
+
+        .ant-modal-confirm-body-wrapper {
+          .ant-modal-confirm-body {
+            .ant-modal-confirm-content {
+              .ant-row {
+                .flex();
+                .justifyCenter();
+                .alignCenter();
+                .flex-column();
+
+                .error-head {
+                  .mt-16();
+                  .font-weight-5();
+
+                  margin-bottom: 0;
+                }
+
+                .error-info {
+                  .mt-16();
+
+                  margin-bottom: 0;
+                  .text-center();
+                  .font-weight-5();
+                }
+
+                .error-message {
+                  .mt-16();
+                  .font-weight-3();
+                  .text-center();
+                  .w-100();
+
+                  background: @purple-100;
+                  border-radius: 10px;
+                  margin-bottom: 0;
+                  padding: 10px 30px;
+                  // color: @blue-700;
+                }
+              }
+            }
+          }
+
+          .ant-modal-confirm-btns {
+            .text-center();
+
+            button {
+              .w-100();
+
+              border-radius: 12px;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

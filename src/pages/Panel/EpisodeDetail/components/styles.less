@@ -1,0 +1,52 @@
+.box {
+  border-radius: 10px;
+  display: flex;
+  background-color: gray;
+  overflow: hidden;
+
+  &__image {
+    width: 170px;
+    height: 170px;
+  }
+
+  .description {
+    padding: 0.5rem 1rem;
+    font-family: var(--font-text);
+    font-size: 1.1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+
+    &__left {
+      width: 40%;
+      color: #fff;
+    }
+
+    &__right {
+      width: 60%;
+    }
+
+    .more-info {
+      position: absolute;
+      right: 0px;
+      width: 70px;
+      color: #fff;
+      text-decoration: underline;
+      align-self: start;
+    }
+
+    p:not(:last-child) {
+      margin-bottom: 0.8rem;
+    }
+
+    .name {
+      color: #fff !important;
+
+      &:hover {
+        color: var(--color-span) !important;
+      }
+    }
+  }
+}

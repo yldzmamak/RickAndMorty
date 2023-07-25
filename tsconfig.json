@@ -1,0 +1,59 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "es2020",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "noEmit": true,
+        "experimentalDecorators": true,
+        "jsx": "react",
+        "baseUrl": ".",
+        "useUnknownInCatchVariables": false,
+        "types": [
+            "node",
+            "jest"
+        ],
+        "paths": {
+            "@/assets/*": ["./src/assets/*"],
+            "@/components/*": ["./src/components/*"],
+            "@/docs/*": ["./src/docs/*"],
+            "@/features/*": ["./src/features/*"],
+            "@/hooks/*": ["./src/hooks/*"],
+            "@/helpers/*": ["./src/helpers/*"],
+            "@/interfaces/*": ["./src/interfaces/*"],
+            "@/layouts/*": ["./src/layouts/*"],
+            "@/mock/*": ["./src/mock/*"],
+            "@/mobile/*": ["./src/mobile/*"],
+            "@/pages/*": ["./src/pages/*"],
+            "@/api/*": ["./src/api/*"],
+            "@/types/*": ["./src/types/*"],
+            "@/routes/*": ["./src/routes/*"],
+            "@/services/*": ["./src/services/*"],
+            "@/store/*": ["./src/store/*"],
+            "@/translations/*": ["./src/translations/*"],
+            "@/tests/*": ["./src/tests/*"]
+        },
+    },
+    "include": [
+        "./**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "src/docs",
+        "coverage"
+    ]
+}

@@ -1,0 +1,44 @@
+@media @xs {
+  .ant-row {
+    &.authentication {
+      .authentication-left {
+        padding: 0 35px;
+      }
+    }
+  }
+}
+
+@media @xxs {
+  .ant-row {
+    &.authentication {
+      .authentication-left {
+        padding: 15px !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .ant-row {
+    &.authentication {
+      .authentication-login {
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+
+      .authentication-left {
+        padding: 0 35px;
+        width: 55%;
+
+        .ant-form {
+          .ant-row {
+            > .ant-col-md-12 {
+              flex: 0 0 100%;
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
