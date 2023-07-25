@@ -1,6 +1,7 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
+
+import { Row } from "antd";
 
 import {
   CommonActions,
@@ -13,7 +14,6 @@ import { IStore } from "@/store/IStore";
 import BoxCharacterContent from "./components/BoxCharacterContent";
 
 const EpisodeDetail = (): JSX.Element => {
-  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const params = useParams();
 
@@ -29,8 +29,8 @@ const EpisodeDetail = (): JSX.Element => {
   }, [params.episodeId]);
 
   React.useEffect(() => {
-    if (episode.data.characters) {
-      const ids = episode.data.characters.map((url) => extractIdFromUrl(url));
+    if (episode?.data?.characters) {
+      const ids = episode.data?.characters?.map((url) => extractIdFromUrl(url));
       dispatch(CommonActions.getCharacterList(ids));
     }
   }, [episode.data.characters]);
@@ -42,22 +42,24 @@ const EpisodeDetail = (): JSX.Element => {
   };
 
   return (
-    <section className="grid">
-      {characterList?.data?.map((image) => (
+    
+    <Row gutter={[16, 16]}>
+      {characterList?.data?.map((character) => (
         <BoxCharacterContent
-          key={image.id}
-          name={image.name}
-          status={image.status}
-          species={image.species}
-          gender={image.gender}
-          type={image.type}
-          imageSource={image.image}
-          originLocation={image.origin.name}
-          actualLocation={image.location.name}
-          moreInfo={image.url}
+          key={character.id}
+          name={character.name}
+          status={character.status}
+          species={character.species}
+          gender={character.gender}
+          type={character.type}
+          imageSource={character.image}
+          originLocation={character.origin.name}
+          actualLocation={character.location.name}
+          moreInfo={character.url}
+          loading={characterList.loading}
         />
       ))}
-    </section>
+    </Row>
   );
 };
 

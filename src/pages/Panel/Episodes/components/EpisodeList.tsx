@@ -108,8 +108,8 @@ const EpisodeList: React.FC = () => {
         >
           <Skeleton avatar title={false} loading={episodeList.loading} active>
             <List.Item.Meta
-              title={item.name}
-              description={moment(item.air_date).format("Do MMMM YYYY")}
+              title={`${t("label.episodeName")}: ${item.name}`}
+              description={`${t("label.airDate")}: ${moment(item.air_date).format("Do MMMM YYYY")}`}
             />
           </Skeleton>
         </List.Item>

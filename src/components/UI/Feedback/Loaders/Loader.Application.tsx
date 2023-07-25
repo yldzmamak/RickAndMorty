@@ -13,8 +13,9 @@ type LoaderProps = {
 const ApplicationLoader = ({ children }: LoaderProps) => {
 
   const { t } = useTranslation();
-  const { auth: { logout } } = useAppSelector((state: IStore) => ({
+  const { auth: { logout }, characterList } = useAppSelector((state: IStore) => ({
     auth: state.auth,
+    characterList: state.common.characterList,
   }));
 
   const handleMessages = () => {
@@ -22,6 +23,8 @@ const ApplicationLoader = ({ children }: LoaderProps) => {
 
     if (logout) {
       message = t("messages.logoutSuccessInfo");
+    } else if(characterList.loading) {
+      message = t("messages.characterListLoading");
     }
 
     return message;
@@ -30,7 +33,7 @@ const ApplicationLoader = ({ children }: LoaderProps) => {
   return (
     <>
       <FullPageLoader
-        loading={logout}
+        loading={logout || characterList.loading}
         message={handleMessages()}
       />
       {!logout && children}

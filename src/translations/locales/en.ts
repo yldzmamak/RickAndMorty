@@ -8,6 +8,8 @@ export const enMessages = {
   "label.error": "Error",
   "label.loadingMore": "Loading More",
   "label.endMessage": "That's all, no more data 🤐",
+  "label.episodeName": "Episode Name",
+  "label.airDate": "Air Date",
 
   "placeholder.createNewPassword": "Create your new password",
   "placeholder.confirmNewPassword": "Confirm your new password",
@@ -18,6 +20,7 @@ export const enMessages = {
   "button.more": "Click for more...",
 
   "messages.logoutSuccessInfo": "You are redirected to the login page..",
+  "messages.characterListLoading": "Loading character list..",
 
   "routes.login": "Login",
   "routes": {

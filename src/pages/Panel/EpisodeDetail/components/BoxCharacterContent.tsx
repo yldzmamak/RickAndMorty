@@ -1,19 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import "./styles.less";
+import {
+  EditOutlined,
+  EllipsisOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
+import { Avatar, Card, Col } from "antd";
+import Meta from "antd/lib/card/Meta";
+
 
 type BoxCharacterContentProps = {
-  name: string; 
-  status: string | null;
-  species?: string; 
-  gender?: string; 
-  type?: string; 
-  imageSource?: string;
-  originLocation?: string;
-  actualLocation?: string; 
-  moreInfo?: string;
-  useFixed?: boolean; 
+  name: string
+  status: string | null
+  species?: string
+  gender?: string
+  type?: string
+  imageSource?: string
+  originLocation?: string
+  actualLocation?: string
+  moreInfo?: string
+  loading?: boolean
 };
 
 const BoxCharacterContent = ({
@@ -28,8 +35,24 @@ const BoxCharacterContent = ({
   moreInfo,
 }: BoxCharacterContentProps) => {
   return (
-    <div className="box">
-      <img className="box__image" alt={name} src={imageSource} />
+    <Col className="flex justifyCenter" xs={24} sm={12} md={12} lg={8} xl={8}>
+        <Card
+          style={{ width: 300 }}
+          cover={<img alt="example" src={imageSource} />}
+          actions={[
+            <SettingOutlined key="setting" />,
+            <EditOutlined key="edit" />,
+            <EllipsisOutlined key="ellipsis" />,
+          ]}
+        >
+          <Meta
+            title="Card title"
+            description="This is the description"
+          />
+        </Card>
+    </Col>
+    /*  <div className="box">
+      <img className="box-image" alt={name} src={imageSource} />
       <div className="description">
         <div className="description__left">
           <p>
@@ -53,7 +76,7 @@ const BoxCharacterContent = ({
           </a>
         </div>
       </div>
-    </div>
+    </div> */
   );
 };
 
