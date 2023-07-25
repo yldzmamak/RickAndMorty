@@ -29,11 +29,11 @@ const EpisodeDetail = (): JSX.Element => {
   }, [params.episodeId]);
 
   React.useEffect(() => {
-    if (episode?.data?.characters) {
+    if (episode?.data?.characters.length > 0) {
       const ids = episode.data?.characters?.map((url) => extractIdFromUrl(url));
       dispatch(CommonActions.getCharacterList(ids));
     }
-  }, [episode.data.characters]);
+  }, [episode?.data?.characters]);
 
   const extractIdFromUrl = (url: string) => {
     const parts = url.split("/"); // Split the URL by "/"
@@ -50,13 +50,8 @@ const EpisodeDetail = (): JSX.Element => {
           name={character.name}
           status={character.status}
           species={character.species}
-          gender={character.gender}
-          type={character.type}
           imageSource={character.image}
-          originLocation={character.origin.name}
           actualLocation={character.location.name}
-          moreInfo={character.url}
-          loading={characterList.loading}
         />
       ))}
     </Row>
