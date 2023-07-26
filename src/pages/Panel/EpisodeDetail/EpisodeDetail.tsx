@@ -51,7 +51,6 @@ const EpisodeDetail = (): JSX.Element => {
   }, [characterList.data]);
 
   React.useEffect(() => {
-    if (characterSearchName) {
       setCharacters(
         characterList?.data?.filter((character) =>
           character.name
@@ -59,7 +58,6 @@ const EpisodeDetail = (): JSX.Element => {
             .includes(characterSearchName.toLowerCase()),
         ),
       );
-    }
   }, [characterSearchName]);
 
   const extractIdFromUrl = (url: string) => {

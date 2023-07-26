@@ -15,9 +15,7 @@ const Search = () => {
   const [searchedValue, setSearchedValue] = React.useState<string>("");
 
   React.useEffect(() => {
-    if (searchedValue !== "") {
-      dispatch(CommonActions.setCharacterSearchName(searchedValue));
-    }
+    dispatch(CommonActions.setCharacterSearchName(searchedValue));
   }, [searchedValue]);
 
   return (
