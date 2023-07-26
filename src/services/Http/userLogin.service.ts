@@ -13,6 +13,5 @@ export const loginUserService = async (request: ILogin) => {
   const response = await fetch(LOGIN_API_ENDPOINT, parameters);
   
   const json = await response.json();
-  console.log(json);
   return json[0];
 };

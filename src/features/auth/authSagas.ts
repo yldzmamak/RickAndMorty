@@ -18,8 +18,6 @@ function* getLogin ({ payload }: ILoginSyncAction) {
     yield put(AuthActions.loginSuccess(response));
     yield call(AuthService.setAuthInfo, response);
   } catch (error) {
-    console.log("catch");
-
     yield put(AuthActions.loginFailure(error));
   }
 }
