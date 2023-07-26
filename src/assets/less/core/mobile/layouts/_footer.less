@@ -6,6 +6,8 @@
       margin-bottom: 0 !important;
       padding-bottom: 16px !important;
       padding-top: 0 !important;
+      .pr-10();
+      .pl-10();
 
       .ant-row {
         .flex-column();
@@ -14,8 +16,13 @@
         gap: 12px;
         width: 100%;
 
-        footer-left {
+        .footer-left {
           .fs-11();
+          .w-100();
+
+          .ant-typography {
+            text-align: center;
+          }
         }
       }
     }
