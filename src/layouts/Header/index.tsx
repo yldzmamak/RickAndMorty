@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { Col, Layout, Row } from "antd";
 
@@ -15,12 +16,11 @@ const LanguageSelection = React.lazy(() => import("./LanguageSelection"));
 const Logout = React.lazy(() => import("./Logout"));
 
 type HeaderProps = {
-  currentLang: LanguageTypes;
-  languageChange: (lang: LanguageTypes) => void;
+  currentLang: LanguageTypes
+  languageChange: (lang: LanguageTypes) => void
 };
 
 const Header = ({ currentLang, languageChange }: HeaderProps) => {
-
   const [scroll, setScroll] = React.useState<boolean>(false);
 
   React.useEffect(() => {
@@ -34,13 +34,22 @@ const Header = ({ currentLang, languageChange }: HeaderProps) => {
       <Row className="header-row" wrap={false}>
         <Col className="header-left">
           <Col className="header-left-inner">
-            <img className="header-logo" src={loaderGif} />
+            <Link to="/panel/dashboard">
+              <img
+                className="header-logo"
+                src={loaderGif}
+                alt="rick-and-morty-logo"
+              />
+            </Link>
           </Col>
         </Col>
         <Col className="header-right">
           <Col className="header-right-inner">
             <React.Suspense fallback={<WrappedLoader />}>
-              <LanguageSelection languageChange={languageChange} currentLang={currentLang} />
+              <LanguageSelection
+                languageChange={languageChange}
+                currentLang={currentLang}
+              />
             </React.Suspense>
             <React.Suspense fallback={<WrappedLoader />}>
               <Logout />
@@ -48,7 +57,7 @@ const Header = ({ currentLang, languageChange }: HeaderProps) => {
           </Col>
         </Col>
       </Row>
-    </Layout.Header >
+    </Layout.Header>
   );
 };
 
@@ -60,7 +69,8 @@ const mapStateToProps = (state: IStore) => {
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    languageChange: (lang: LanguageTypes) => dispatch(SystemActions.setLanguage(lang)),
+    languageChange: (lang: LanguageTypes) =>
+      dispatch(SystemActions.setLanguage(lang)),
   };
 };
 
