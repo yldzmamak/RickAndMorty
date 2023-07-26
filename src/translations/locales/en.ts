@@ -10,6 +10,9 @@ export const enMessages = {
   "label.endMessage": "That's all, no more data 🤐",
   "label.episodeName": "Episode Name",
   "label.airDate": "Air Date",
+  "label.species": "Species",
+  "label.status": "Status",
+  "label.gender": "Gender",
 
   "placeholder.createNewPassword": "Create your new password",
   "placeholder.confirmNewPassword": "Confirm your new password",
@@ -18,10 +21,12 @@ export const enMessages = {
   "button.logout": "Log out",
   "button.OK": "Okay",
   "button.more": "Click for more...",
+  "button.clear": "Clear",
 
   "messages.logoutSuccessInfo": "You are redirected to the login page..",
   "messages.characterListLoading": "Loading character list..",
   "messages.enterCharacterName": "Enter Character Name..",
+  "messages.noTransactionFound": "No Transaction Found",
 
   "routes.login": "Login",
   "routes": {

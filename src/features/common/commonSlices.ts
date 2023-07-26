@@ -36,7 +36,10 @@ const initialState: ICommonState = {
     data: [],
     ...stateMisc,
   },
-  characterSearchName: ""
+  characterSearchName: "",
+  characterStatus: "",
+  characterSpecies: "",
+  characterGender: ""
 };
 
 const commonSlices = createSlice({
@@ -98,6 +101,18 @@ const commonSlices = createSlice({
 
     setCharacterSearchName (state, action: PayloadAction<string>) {
       state.characterSearchName !== action.payload ? state.characterSearchName = action.payload : null;
+    },
+
+    setCharacterStatus (state, action: PayloadAction<string>) {
+      state.characterStatus !== action.payload ? state.characterStatus = action.payload : null;
+    },
+
+    setCharacterSpecies (state, action: PayloadAction<string>) {
+      state.characterSpecies !== action.payload ? state.characterSpecies = action.payload : null;
+    },
+
+    setCharacterGender (state, action: PayloadAction<string>) {
+      state.characterGender !== action.payload ? state.characterGender = action.payload : null;
     },
   },
 });

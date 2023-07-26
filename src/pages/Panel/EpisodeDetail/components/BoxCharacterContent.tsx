@@ -27,8 +27,8 @@ const BoxCharacterContent = ({
       xs={24}
       sm={12}
       md={8}
-      lg={6}
-      xl={6}
+      lg={8}
+      xl={8}
     >
       <React.Suspense fallback={<WrappedLoader />}>
         <Card cover={<img alt="example" src={imageSource} />}>

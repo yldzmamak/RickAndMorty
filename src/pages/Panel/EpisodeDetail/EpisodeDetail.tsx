@@ -1,12 +1,17 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
-import { Row } from "antd";
+import { Col, Row } from "antd";
 
+import { EmptyGlobal } from "@/components/UI";
 import {
   CommonActions,
+  getCharacterGender,
   getCharacterList,
   getCharacterSearchName,
+  getCharacterSpecies,
+  getCharacterStatus,
   getEpisodeDetail,
 } from "@/features/common";
 import { useAppDispatch, useAppSelector } from "@/hooks/useStore";
@@ -15,21 +20,32 @@ import { ICharacter } from "@/types/interfaces/dashboard/dashboard";
 
 import BoxCharacterContent from "./components/BoxCharacterContent";
 import EpisodeHeader from "./components/EpisodeHeader";
+import FilterCollapse from "./components/FilterCollapse";
 
 type MyArrayType = ICharacter[];
 
 const EpisodeDetail = (): JSX.Element => {
+  const { t } = useTranslation();
+
   const dispatch = useAppDispatch();
   const params = useParams();
   const [characters, setCharacters] = useState<MyArrayType>([]);
 
-  const { episode, characterList, characterSearchName } = useAppSelector(
-    (state: IStore) => ({
-      episode: getEpisodeDetail(state),
-      characterList: getCharacterList(state),
-      characterSearchName: getCharacterSearchName(state),
-    }),
-  );
+  const {
+    episode,
+    characterList,
+    characterSearchName,
+    characterStatus,
+    characterSpecies,
+    characterGender,
+  } = useAppSelector((state: IStore) => ({
+    episode: getEpisodeDetail(state),
+    characterList: getCharacterList(state),
+    characterSearchName: getCharacterSearchName(state),
+    characterStatus: getCharacterStatus(state),
+    characterSpecies: getCharacterSpecies(state),
+    characterGender: getCharacterGender(state),
+  }));
 
   React.useEffect(() => {
     if (params.episodeId) {
@@ -51,14 +67,28 @@ const EpisodeDetail = (): JSX.Element => {
   }, [characterList.data]);
 
   React.useEffect(() => {
-      setCharacters(
-        characterList?.data?.filter((character) =>
+    const filter = {
+      status: characterStatus,
+      species: characterSpecies,
+      gender: characterGender,
+    };
+
+    setCharacters(
+      characterList?.data
+        ?.filter((character) =>
           character.name
             .toLowerCase()
             .includes(characterSearchName.toLowerCase()),
-        ),
-      );
-  }, [characterSearchName]);
+        )
+        .filter((item: ICharacter) => {
+          return (
+            item.gender.toLowerCase().includes(filter.gender.toLowerCase()) &&
+            item.status.toLowerCase().includes(filter.status.toLowerCase()) &&
+            item.species.toLowerCase().includes(filter.species.toLowerCase())
+          );
+        }),
+    );
+  }, [characterSearchName, characterStatus, characterSpecies, characterGender]);
 
   const extractIdFromUrl = (url: string) => {
     const parts = url.split("/"); // Split the URL by "/"
@@ -70,16 +100,30 @@ const EpisodeDetail = (): JSX.Element => {
     <>
       <EpisodeHeader></EpisodeHeader>
       <Row gutter={[16, 16]}>
-        {characters?.map((character) => (
-          <BoxCharacterContent
-            key={character.id}
-            name={character.name}
-            status={character.status}
-            species={character.species}
-            imageSource={character.image}
-            actualLocation={character.location.name}
-          />
-        ))}
+        <Col xs={24} md={24} lg={6}>
+          <FilterCollapse />
+        </Col>
+        <Col xs={24} md={24} lg={18}>
+          {characters.length > 0 ? (
+            <Row gutter={[16, 16]}>
+              {characters?.map((character) => (
+                <BoxCharacterContent
+                  key={character.id}
+                  name={character.name}
+                  status={character.status}
+                  species={character.species}
+                  imageSource={character.image}
+                  actualLocation={character.location.name}
+                />
+              ))}
+            </Row>
+          ) : (
+            <EmptyGlobal
+              description={t("messages.noTransactionFound")}
+              className=""
+            />
+          )}
+        </Col>
       </Row>
     </>
   );
