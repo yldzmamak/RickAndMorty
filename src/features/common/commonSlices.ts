@@ -35,7 +35,8 @@ const initialState: ICommonState = {
   characterList: {
     data: [],
     ...stateMisc,
-  }
+  },
+  characterSearchName: ""
 };
 
 const commonSlices = createSlice({
@@ -93,6 +94,10 @@ const commonSlices = createSlice({
     ) {
       state.characterList.loading = false;
       state.characterList.error = action.payload.results;
+    },
+
+    setCharacterSearchName (state, action: PayloadAction<string>) {
+      state.characterSearchName !== action.payload ? state.characterSearchName = action.payload : null;
     },
   },
 });

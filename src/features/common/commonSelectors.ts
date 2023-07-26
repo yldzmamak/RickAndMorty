@@ -12,3 +12,7 @@ export const getEpisodeDetail = (state: IStore) => {
 export const getCharacterList = (state: IStore) => {
 	return state.common.characterList;
 };
+
+export const getCharacterSearchName = (state: IStore) => {
+	return state.common.characterSearchName;
+};

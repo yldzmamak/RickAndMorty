@@ -21,6 +21,7 @@ export const enMessages = {
 
   "messages.logoutSuccessInfo": "You are redirected to the login page..",
   "messages.characterListLoading": "Loading character list..",
+  "messages.enterCharacterName": "Enter Character Name..",
 
   "routes.login": "Login",
   "routes": {

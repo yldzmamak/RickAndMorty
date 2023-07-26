@@ -21,6 +21,7 @@ export const trMessages = {
 
   "messages.logoutSuccessInfo": "Giriş sayfasına yönlendiriliyorsunuz..",
   "messages.characterListLoading": "Karakter listesi yükleniyor..",
+  "messages.enterCharacterName": "Karakter adı giriniz..",
 
   "routes.login": "Giriş",
   "routes": {

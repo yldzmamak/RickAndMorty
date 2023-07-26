@@ -13,4 +13,5 @@ export interface ICommonState {
   episodeList: IEpisodeState;
   episode: IEpisodeDetailState<IEpisode>;
   characterList: IEpisodeDetailState<ICharacter[]>;
+  characterSearchName: string;
 }

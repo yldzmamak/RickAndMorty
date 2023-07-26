@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { Row } from "antd";
@@ -6,22 +6,30 @@ import { Row } from "antd";
 import {
   CommonActions,
   getCharacterList,
+  getCharacterSearchName,
   getEpisodeDetail,
 } from "@/features/common";
 import { useAppDispatch, useAppSelector } from "@/hooks/useStore";
 import { IStore } from "@/store/IStore";
+import { ICharacter } from "@/types/interfaces/dashboard/dashboard";
 
 import BoxCharacterContent from "./components/BoxCharacterContent";
-import EpisodeTitle from "./components/EpisodeTitle";
+import EpisodeHeader from "./components/EpisodeHeader";
+
+type MyArrayType = ICharacter[];
 
 const EpisodeDetail = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const params = useParams();
+  const [characters, setCharacters] = useState<MyArrayType>([]);
 
-  const { episode, characterList } = useAppSelector((state: IStore) => ({
-    episode: getEpisodeDetail(state),
-    characterList: getCharacterList(state),
-  }));
+  const { episode, characterList, characterSearchName } = useAppSelector(
+    (state: IStore) => ({
+      episode: getEpisodeDetail(state),
+      characterList: getCharacterList(state),
+      characterSearchName: getCharacterSearchName(state),
+    }),
+  );
 
   React.useEffect(() => {
     if (params.episodeId) {
@@ -36,6 +44,24 @@ const EpisodeDetail = (): JSX.Element => {
     }
   }, [episode?.data?.characters]);
 
+  React.useEffect(() => {
+    if (characterList.data) {
+      setCharacters(characterList.data);
+    }
+  }, [characterList.data]);
+
+  React.useEffect(() => {
+    if (characterSearchName) {
+      setCharacters(
+        characterList?.data?.filter((character) =>
+          character.name
+            .toLowerCase()
+            .includes(characterSearchName.toLowerCase()),
+        ),
+      );
+    }
+  }, [characterSearchName]);
+
   const extractIdFromUrl = (url: string) => {
     const parts = url.split("/"); // Split the URL by "/"
     const id = parts[parts.length - 1]; // Get the last part, which should be the ID
@@ -44,19 +70,19 @@ const EpisodeDetail = (): JSX.Element => {
 
   return (
     <>
-    <EpisodeTitle></EpisodeTitle>
-    <Row gutter={[16, 16]}>
-      {characterList?.data?.map((character) => (
-        <BoxCharacterContent
-          key={character.id}
-          name={character.name}
-          status={character.status}
-          species={character.species}
-          imageSource={character.image}
-          actualLocation={character.location.name}
-        />
-      ))}
-    </Row>
+      <EpisodeHeader></EpisodeHeader>
+      <Row gutter={[16, 16]}>
+        {characters?.map((character) => (
+          <BoxCharacterContent
+            key={character.id}
+            name={character.name}
+            status={character.status}
+            species={character.species}
+            imageSource={character.image}
+            actualLocation={character.location.name}
+          />
+        ))}
+      </Row>
     </>
   );
 };
