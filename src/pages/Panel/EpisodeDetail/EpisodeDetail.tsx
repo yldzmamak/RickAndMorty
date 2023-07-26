@@ -12,6 +12,7 @@ import { useAppDispatch, useAppSelector } from "@/hooks/useStore";
 import { IStore } from "@/store/IStore";
 
 import BoxCharacterContent from "./components/BoxCharacterContent";
+import EpisodeTitle from "./components/EpisodeTitle";
 
 const EpisodeDetail = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -42,7 +43,8 @@ const EpisodeDetail = (): JSX.Element => {
   };
 
   return (
-    
+    <>
+    <EpisodeTitle></EpisodeTitle>
     <Row gutter={[16, 16]}>
       {characterList?.data?.map((character) => (
         <BoxCharacterContent
@@ -55,6 +57,7 @@ const EpisodeDetail = (): JSX.Element => {
         />
       ))}
     </Row>
+    </>
   );
 };
 

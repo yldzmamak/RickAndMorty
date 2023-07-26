@@ -29,19 +29,14 @@ const BoxCharacterContent = ({
       lg={8}
       xl={8}
     >
-      <Card
-        style={{ width: 300 }}
-        cover={<img alt="example" src={imageSource} />}
-      >
+      <Card cover={<img alt="example" src={imageSource} />}>
         <Tag
           color={status === "Alive" ? "success" : "error"}
           className="alive-tag"
         >
           {status}
         </Tag>
-        <Typography.H level={2} style={{ width: "max-content" }}>
-          {name}
-        </Typography.H>
+        <Typography.H level={2}>{name}</Typography.H>
 
         <Meta title={`${species}`} description={`${actualLocation}`} />
       </Card>
