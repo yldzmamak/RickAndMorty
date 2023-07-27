@@ -1,10 +1,10 @@
 import { ILogin } from "@/types/interfaces/authentication/authentication";
 
-import appConfig from "../../../environments/app";
 
+export const loginUserService = async (request: ILogin) => {  
+  const loginApiUrl = process.env.NODE_ENV === "development" ?  "http://localhost:3000" : process.env.REACT_APP_API_BASE_URL;
 
-export const loginUserService = async (request: ILogin) => {
-  const LOGIN_API_ENDPOINT = `${appConfig.loginApiUrl}/users?username=${request.CLIENT_USERNAME}&password=${request.CLIENT_PASSWORD}`;
+  const LOGIN_API_ENDPOINT = `${loginApiUrl}/users?username=${request.CLIENT_USERNAME}&password=${request.CLIENT_PASSWORD}`;
 
   const parameters = {
     method: "GET",
