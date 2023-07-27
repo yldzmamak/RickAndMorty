@@ -3,12 +3,12 @@ const fetch = require('node-fetch');
 
 exports.handler = async (event) => {
   const request = JSON.parse(event.body);
-  const LOGIN_API_ENDPOINT = `https://64c243a9473007000860b25b--fastidious-bombolone-a9ae5a.netlify.app/.netlify/functions/json-server/users?username=${request.CLIENT_USERNAME}&password=${request.CLIENT_PASSWORD}`;
+  const LOGIN_API_ENDPOINT = `https://64c246a73d697400086cf332--fastidious-bombolone-a9ae5a.netlify.app/.netlify/functions/json-server/users?username=${request.CLIENT_USERNAME}&password=${request.CLIENT_PASSWORD}`;
 
   try {
     const response = await fetch(LOGIN_API_ENDPOINT, {
       headers: {
-        'Access-Control-Allow-Origin': 'https://64c2443223b06e0008c773e2--fastidious-bombolone-a9ae5a.netlify.app',
+        'Access-Control-Allow-Origin': '64c246a73d697400086cf332--fastidious-bombolone-a9ae5a.netlify.app',
         'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type',
         "Content-Type": "application/json",
