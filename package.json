@@ -17,7 +17,7 @@
     }
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config environments/webpack/webpack.config.prod.js",
+    "build": "cross-env NODE_ENV=production webpack --config environments/webpack/webpack.config.dev.js",
     "build:dev": "cross-env NODE_ENV=development webpack --config environments/webpack/webpack.config.dev.js",
     "check": "npm run lint && npm run type-check",
     "clean": "sh ./scripts/clean.sh",
