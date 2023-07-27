@@ -2,6 +2,7 @@ import { developmentConfig } from "./development";
 
 export interface IAppConfig {
   apiUrl: string;
+  loginApiUrl: string;
   version: string;
 }
 
