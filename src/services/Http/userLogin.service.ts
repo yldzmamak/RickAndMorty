@@ -7,7 +7,7 @@ export const loginUserService = async (request: ILogin) => {
   if (isLocal) {
     LOGIN_API_ENDPOINT = `http://localhost:3000/users?username=${request.CLIENT_USERNAME}&password=${request.CLIENT_PASSWORD}`;
   } else {
-    LOGIN_API_ENDPOINT = `https://fastidious-bombolone-a9ae5a.netlify.app/.netlify/functions/json-server/users?username=${request.CLIENT_USERNAME}&password=${request.CLIENT_PASSWORD}`;
+    LOGIN_API_ENDPOINT = `https://fastidious-bombolone-a9ae5a.netlify.app:3000/users?username=${request.CLIENT_USERNAME}&password=${request.CLIENT_PASSWORD}`;
   }
 
   const parameters = {
