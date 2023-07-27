@@ -112,7 +112,7 @@
     "prettier": "^2.8.8",
     "react-svg": "^16.1.16",
     "style-loader": "^3.3.3",
-    "stylelint": "^14.9.1",
+    "stylelint": "^15.5.0",
     "stylelint-config-standard": "^33.0.0",
     "stylelint-less": "^1.0.6",
     "stylelint-order": "^6.0.3",
