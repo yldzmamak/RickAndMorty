@@ -13,6 +13,9 @@ export const loginUserService = async (request: ILogin) => {
   const parameters = {
     method: "GET",
     headers: {
+      "Access-Control-Allow-Origin": "https://64c24317101e9e000833cec4--fastidious-bombolone-a9ae5a.netlify.app",
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
       "Content-Type": "application/json",
     },
   };
