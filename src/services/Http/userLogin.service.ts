@@ -4,6 +4,9 @@ export const loginUserService = async (request: ILogin) => {
   const isLocal = window.location.hostname === "localhost";
   let LOGIN_API_ENDPOINT;
 
+  console.log(process.env.REACT_APP_API_ENDPOINT);
+  
+
   if (isLocal) {
     LOGIN_API_ENDPOINT = `http://localhost:3000/users?username=${request.CLIENT_USERNAME}&password=${request.CLIENT_PASSWORD}`;
   } else {
