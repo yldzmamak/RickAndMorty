@@ -40,6 +40,7 @@ exports.handler = async (event) => {
         'Access-Control-Allow-Origin': 'https://64c2443223b06e0008c773e2--fastidious-bombolone-a9ae5a.netlify.app',
         'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type',
+        "Content-Type": "application/json",
       },
     });
 
