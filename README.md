@@ -6,22 +6,6 @@ In the project directory, you can run:
 
 ### `npm install`
 
-OR
-
-### `npm install --force`
-
-### Make sure you have json-server on your computer
-
-### `npm install -g json-server`
-
-and you can check json-server version:
-
-### `check npx json-server --version`
-
-Open same project directory in another terminal, you can run:
-
-### `npx json-server --watch db.json --port 3000`
-
 ### `npm start`
 
 Runs the app in the development mode.\
